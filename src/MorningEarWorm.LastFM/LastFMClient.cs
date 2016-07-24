@@ -1,0 +1,108 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text;
+using Newtonsoft.Json;
+using System.IO;
+using DLeh.Util;
+using System.Configuration;
+
+namespace MorningEarWorm.LastFM
+{
+    public class LastFMClient : ILastFMClient
+    {
+        Func<int, bool> asdf => a => true;
+
+
+        string secret = ConfigurationManager.AppSettings["LastFMSecret"];
+        string apiKey = ConfigurationManager.AppSettings["LastFMApiKey"];
+
+        //http://www.last.fm/api/show/user.getArtistTracks
+        const string userUrl = "http://ws.audioscrobbler.com/2.0/?method=user.getartisttracks&user={0}&artist={1}&api_key=676c7cda460a2e12ea63a54fb469feef&format=json&page={2}";
+
+        string UserName { get; set; }
+
+        public event DataEventHandler<int> PageSearched;
+        public void OnPageSearched(int pageNumber)
+        {
+            PageSearched?.Invoke(this, pageNumber);
+        }
+
+        public LastFMClient(string userName)
+        {
+            UserName = userName;
+        }
+        //todo: make async version
+        public IEnumerable<LastFMTrack> GetTracksByArtist(string artist, int pageNumber = 1)
+        {
+            var artistUrl = string.Format(userUrl, UserName, artist, pageNumber);
+            var req = WebRequest.Create(artistUrl);
+            var response = req.GetResponse();
+            var sb = new StringBuilder();
+            using (var stream = response.GetResponseStream())
+            {
+                var streamReader = new StreamReader(stream);
+
+                string line = "";
+                int i = 0;
+
+                while (line != null)
+                {
+                    i++;
+                    line = streamReader.ReadLine();
+                    if (line != null)
+                        sb.Append(line);
+                }
+            }
+            var fullJson = sb.ToString();
+
+            var obj = JsonConvert.DeserializeObject<UserArtistTracks>(fullJson);
+            return obj.GetLastFMTracks();
+        }
+
+        public IEnumerable<LastFMTrack> FindSongPlays(string artist, string trackName, int max = 5)
+        {
+            var pageNumber = 1;
+            bool keepSearching = true;
+            var counter = 0;
+
+            var allTracks = new List<LastFMTrack>();
+            while (keepSearching)
+            {
+                //todo: get the tracks async and cancel other retreivals once it's found
+                var tracks = GetTracksByArtist(artist, pageNumber);
+                if (tracks == null || !tracks.Any())
+                    break;
+
+                //foreach(var track in tracks)
+                //    Console.WriteLine(track);
+
+                var matchingTracks = tracks.Where(x => x.Track.ToLower().Contains(trackName.ToLower()));
+                if (matchingTracks.Any())
+                {
+                    foreach (var track in matchingTracks.OrderByDescending(x => x.PlayDate))
+                    {
+                        counter++;
+                        if (counter > max)
+                            yield break;
+
+                        //if (allTracks.Any(x => x.Equals(track)))
+                        //{
+                        //    Console.WriteLine("Found dupe, done searching");
+                        //    keepSearching = false;
+                        //    break;
+                        //}
+
+                        allTracks.Add(track);
+                        yield return track;
+                    }
+                }
+
+                OnPageSearched(pageNumber);
+
+                pageNumber++;
+            }
+        }
+    }
+}
