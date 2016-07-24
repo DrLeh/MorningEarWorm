@@ -1,0 +1,12 @@
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.CLI.exe.config
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\obj\Debug\MorningEarWorm.CLI.csprojResolveAssemblyReference.cache
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.CLI.exe
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.CLI.pdb
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.Core.dll
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.LastFM.dll
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\Newtonsoft.Json.dll
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.Core.pdb
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.LastFM.pdb
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\bin\Debug\Newtonsoft.Json.xml
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\obj\Debug\MorningEarWorm.CLI.exe
+C:\git\MorningEarWorm\src\MorningEarWorm.CLI\MorningEarWorm.CLI\obj\Debug\MorningEarWorm.CLI.pdb

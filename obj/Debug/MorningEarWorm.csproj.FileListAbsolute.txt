@@ -1,8 +1,0 @@
-C:\Projects\Git\MorningEarWorm\bin\Debug\MorningEarWorm.exe.config
-C:\Projects\Git\MorningEarWorm\bin\Debug\MorningEarWorm.exe
-C:\Projects\Git\MorningEarWorm\bin\Debug\MorningEarWorm.pdb
-C:\Projects\Git\MorningEarWorm\bin\Debug\Newtonsoft.Json.dll
-C:\Projects\Git\MorningEarWorm\bin\Debug\Newtonsoft.Json.xml
-C:\Projects\Git\MorningEarWorm\obj\Debug\MorningEarWorm.csprojResolveAssemblyReference.cache
-C:\Projects\Git\MorningEarWorm\obj\Debug\MorningEarWorm.exe
-C:\Projects\Git\MorningEarWorm\obj\Debug\MorningEarWorm.pdb

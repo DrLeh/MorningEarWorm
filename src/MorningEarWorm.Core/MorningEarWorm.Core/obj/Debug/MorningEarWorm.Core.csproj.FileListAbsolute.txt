@@ -1,0 +1,4 @@
+C:\git\MorningEarWorm\src\MorningEarWorm.Core\MorningEarWorm.Core\bin\Debug\MorningEarWorm.Core.dll
+C:\git\MorningEarWorm\src\MorningEarWorm.Core\MorningEarWorm.Core\bin\Debug\MorningEarWorm.Core.pdb
+C:\git\MorningEarWorm\src\MorningEarWorm.Core\MorningEarWorm.Core\obj\Debug\MorningEarWorm.Core.dll
+C:\git\MorningEarWorm\src\MorningEarWorm.Core\MorningEarWorm.Core\obj\Debug\MorningEarWorm.Core.pdb
