@@ -65,6 +65,9 @@ namespace MorningEarWorm.LastFM
 
         public IEnumerable<LastFMTrack> FindSongPlays(string artist, string trackName, int max = 5)
         {
+            if (trackName == null)
+                trackName = "";
+
             var pageNumber = 1;
             bool keepSearching = true;
             var counter = 0;

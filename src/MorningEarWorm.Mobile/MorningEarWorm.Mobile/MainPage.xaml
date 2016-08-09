@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MorningEarWorm.Mobile.MainPage"
+             xmlns:android="http://schemas.android.com/apk/res/android">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="labelRedStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+      </Style>
+      <Style x:Key="labelGreenStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Green" />
+      </Style>
+      <Style x:Key="labelBlueStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Blue" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <StackLayout Orientation="Vertical">
+    <Label Text="Morning Ear Worm"></Label>
+    <Label Text="{Binding Message}" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource labelRedStyle}" />
+
+    <Label Text="Artist:"/>
+    <Entry Text="{Binding Artist}"/>
+
+    <Label Text="Track:"/>
+    <Entry Text="{Binding Track}"/>
+
+    <Button Clicked="Search" Text="Search" />
+    <Button Clicked="SearchYT" Text="SearchYT" />
+
+    <Label Text="Select result to tweet:"/>
+    <ListView ItemsSource="{Binding Results}" ItemSelected="Tweet"></ListView>
+
+  </StackLayout>
+</ContentPage>
