@@ -7,16 +7,22 @@ using Newtonsoft.Json;
 using System.IO;
 using DLeh.Util;
 using System.Configuration;
+using MorningEarWorm.Core;
 
 namespace MorningEarWorm.LastFM
 {
     public class LastFMClient : ILastFMClient
     {
-        Func<int, bool> asdf => a => true;
+        public LastFMClient(IConfiguration config, string userName)
+        {
+            _config = config;
+            UserName = userName;
+        }
 
 
-        string secret = ConfigurationManager.AppSettings["LastFMSecret"];
-        string apiKey = ConfigurationManager.AppSettings["LastFMApiKey"];
+        IConfiguration _config;
+        string secret => _config.GetAppSetting("LastFMSecret");
+        string apiKey => _config.GetAppSetting("LastFMApiKey");
 
         //http://www.last.fm/api/show/user.getArtistTracks
         const string userUrl = "http://ws.audioscrobbler.com/2.0/?method=user.getartisttracks&user={0}&artist={1}&api_key=676c7cda460a2e12ea63a54fb469feef&format=json&page={2}";
@@ -29,10 +35,6 @@ namespace MorningEarWorm.LastFM
             PageSearched?.Invoke(this, pageNumber);
         }
 
-        public LastFMClient(string userName)
-        {
-            UserName = userName;
-        }
         //todo: make async version
         public IEnumerable<LastFMTrack> GetTracksByArtist(string artist, int pageNumber = 1)
         {

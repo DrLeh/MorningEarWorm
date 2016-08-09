@@ -15,7 +15,7 @@ namespace MorningEarWorm.LastFM
 
         public override string ToString()
         {
-            return $"{Artist} - {Track} - {PlayDate}";
+            return $"{Artist} - {Track} - {PlayDate:MM/dd/yyyy hh:mm tt}";
         }
 
         public override bool Equals(object obj)

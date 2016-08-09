@@ -1,5 +1,4 @@
 C:\git\MorningEarWorm\src\MorningEarWorm.Core\obj\Debug\MorningEarWorm.Core.csproj.App.config
-C:\git\MorningEarWorm\src\MorningEarWorm.Core\obj\Debug\MorningEarWorm.Core.csprojResolveAssemblyReference.cache
 C:\git\MorningEarWorm\src\MorningEarWorm.Core\bin\Debug\MorningEarWorm.Core.dll.config
 C:\git\MorningEarWorm\src\MorningEarWorm.Core\bin\Debug\MorningEarWorm.Core.dll
 C:\git\MorningEarWorm\src\MorningEarWorm.Core\bin\Debug\MorningEarWorm.Core.pdb

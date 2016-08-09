@@ -1,0 +1,2 @@
+C:\git\MorningEarWorm\src\MorningEarWorm.Xamarin\MorningEarWorm.Xamarin.Droid\obj\Debug\MorningEarWorm.Xamarin.Droid.csprojResolveAssemblyReference.cache
+C:\git\MorningEarWorm\src\MorningEarWorm.Xamarin\MorningEarWorm.Xamarin.Droid\obj\Debug\MorningEarWorm.Xamarin.Droid.MorningEarWormPage.xaml.g.cs

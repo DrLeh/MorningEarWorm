@@ -24,7 +24,6 @@ C:\git\MorningEarWorm\src\MorningEarWorm.LastFM\bin\Debug\Autofac.dll
 C:\git\MorningEarWorm\src\MorningEarWorm.LastFM\bin\Debug\Microsoft.Threading.Tasks.dll
 C:\git\MorningEarWorm\src\MorningEarWorm.LastFM\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
 C:\git\MorningEarWorm\src\MorningEarWorm.LastFM\bin\Debug\MorningEarWorm.Core.pdb
-C:\git\MorningEarWorm\src\MorningEarWorm.LastFM\bin\Debug\Newtonsoft.Json.xml
 C:\git\MorningEarWorm\src\MorningEarWorm.LastFM\bin\Debug\Autofac.xml
 C:\git\MorningEarWorm\src\MorningEarWorm.LastFM\bin\Debug\Microsoft.Threading.Tasks.xml
 C:\git\MorningEarWorm\src\MorningEarWorm.LastFM\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml

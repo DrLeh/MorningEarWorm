@@ -9,10 +9,15 @@ using Tweetinvi;
 
 namespace MorningEarWorm.Core
 {
-    public static class Tweeter
+    public class Tweeter
     {
+        readonly IConfiguration _config;
+        public Tweeter(IConfiguration config)
+        {
+            _config = config;
+        }
 
-        public static void SendTweet(string artist, string song, int days)
+        public void SendTweet(string artist, string song, int days)
         {
             var data = new TweetData
             {
@@ -45,7 +50,7 @@ namespace MorningEarWorm.Core
             }
         }
 
-        private static string BuildMessage(TweetData data)
+        private string BuildMessage(TweetData data)
         {
             var template = "This morning I woke up with {0} - {1} in my head. It has been {2} days since I last heard this song";
             var templateLength = template.Length - 9;
@@ -59,12 +64,12 @@ namespace MorningEarWorm.Core
             return tweet;
         }
 
-        private static void Send(string tweet)
+        private void Send(string tweet)
         {
-            var TwitterConsumerKey = ConfigurationManager.AppSettings["TwitterConsumerKey"];
-            var TwitterSecret = ConfigurationManager.AppSettings["TwitterSecret"];
-            var TwitterAccessToken = ConfigurationManager.AppSettings["TwitterAccessToken"];
-            var TwitterAccessTokenSecret = ConfigurationManager.AppSettings["TwitterAccessTokenSecret"];
+            var TwitterConsumerKey = _config.GetAppSetting("TwitterConsumerKey");
+            var TwitterSecret = _config.GetAppSetting("TwitterSecret");
+            var TwitterAccessToken = _config.GetAppSetting("TwitterAccessToken");
+            var TwitterAccessTokenSecret = _config.GetAppSetting("TwitterAccessTokenSecret");
 
             Auth.SetUserCredentials(TwitterConsumerKey, TwitterSecret, TwitterAccessToken, TwitterAccessTokenSecret);
             Tweet.PublishTweet(tweet);

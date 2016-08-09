@@ -6,11 +6,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace MorningEarWorm
 {
     class Program
     {
+
+        public class ConfigManagerConfiguration : IConfiguration
+        {
+            public string GetAppSetting(string key)
+            {
+                return ConfigurationManager.AppSettings[key];
+            }
+        }
+
         static void Main(string[] args)
         {
             RunReal();
@@ -18,7 +28,7 @@ namespace MorningEarWorm
         }
         public static void RunReal()
         {
-            var client = new LastFMClient("thelehmanlip");
+            var client = new LastFMClient(new ConfigManagerConfiguration(), "thelehmanlip");
             DoStuff(client);
         }
 
@@ -72,7 +82,7 @@ namespace MorningEarWorm
                 {
                     var trackPlay = list[which - 1];
                     Console.WriteLine("Tweeting it!");
-                    Tweeter.SendTweet(trackPlay.Artist, trackPlay.Track, (DateTime.Today - trackPlay.PlayDate).Days);
+                    new Tweeter(new ConfigManagerConfiguration()).SendTweet(trackPlay.Artist, trackPlay.Track, (DateTime.Today - trackPlay.PlayDate).Days);
                 }else
                 {
                     Console.WriteLine("Skipping tweet");

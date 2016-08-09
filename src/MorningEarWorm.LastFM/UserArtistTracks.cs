@@ -11,7 +11,7 @@ namespace MorningEarWorm.LastFM
     {
         public IEnumerable<LastFMTrack> GetLastFMTracks()
         {
-            return tracks.tracks.Select(x => x.ToLastFMTrack());
+            return tracks?.tracks?.Select(x => x.ToLastFMTrack());
         }
 
         [JsonProperty(nameof(artisttracks))]

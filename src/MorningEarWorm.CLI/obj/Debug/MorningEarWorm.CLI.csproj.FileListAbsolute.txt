@@ -38,11 +38,6 @@ C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Microsoft.Threading.Tasks
 C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
 C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.Core.pdb
 C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\MorningEarWorm.LastFM.pdb
-C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Castle.Core.xml
-C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
-C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Microsoft.Practices.ServiceLocation.xml
-C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Moq.xml
-C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Newtonsoft.Json.xml
 C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Autofac.xml
 C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Microsoft.Threading.Tasks.xml
 C:\git\MorningEarWorm\src\MorningEarWorm.CLI\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
