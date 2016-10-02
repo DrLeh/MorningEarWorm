@@ -72,5 +72,3 @@ C:\git\MorningEarWorm\src\MorningEarWorm.Mobile\MorningEarWorm.Mobile.Droid\obj\
 C:\git\MorningEarWorm\src\MorningEarWorm.Mobile\MorningEarWorm.Mobile.Droid\obj\Debug\android\assets\System.Transactions.dll.mdb
 C:\git\MorningEarWorm\src\MorningEarWorm.Mobile\MorningEarWorm.Mobile.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\git\MorningEarWorm\src\MorningEarWorm.Mobile\MorningEarWorm.Mobile.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
-C:\git\MorningEarWorm\src\MorningEarWorm.Mobile\MorningEarWorm.Mobile.Droid\obj\Debug\MorningEarWorm.Mobile.Droid.dll.mdb
-C:\git\MorningEarWorm\src\MorningEarWorm.Mobile\MorningEarWorm.Mobile.Droid\bin\Debug\MorningEarWorm.Mobile.Droid.dll.mdb

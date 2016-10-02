@@ -20,7 +20,7 @@ namespace MorningEarWorm.Mobile
 
         public void Tweet(object sender, SelectedItemChangedEventArgs e)
         {
-            var track = e.SelectedItem as LastFMTrack;
+            var track = e.SelectedItem as Track;
             if (track != null)
                 vm.Tweet(track);
 

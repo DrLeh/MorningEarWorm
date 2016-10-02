@@ -11,9 +11,9 @@ using MorningEarWorm.Core;
 
 namespace MorningEarWorm.LastFM
 {
-    public class LastFMClient : ILastFMClient
+    public class LastFMRepository : IScrobbleRepository
     {
-        public LastFMClient(IConfiguration config, string userName)
+        public LastFMRepository(IConfiguration config, string userName)
         {
             _config = config;
             UserName = userName;
@@ -36,7 +36,7 @@ namespace MorningEarWorm.LastFM
         }
 
         //todo: make async version
-        public IEnumerable<LastFMTrack> GetTracksByArtist(string artist, int pageNumber = 1)
+        public IEnumerable<Track> GetTracksByArtist(string artist, int pageNumber = 1)
         {
             var artistUrl = string.Format(userUrl, UserName, artist, pageNumber);
             var req = WebRequest.Create(artistUrl);
@@ -63,7 +63,7 @@ namespace MorningEarWorm.LastFM
             return obj.GetLastFMTracks();
         }
 
-        public IEnumerable<LastFMTrack> FindSongPlays(string artist, string trackName, int max = 5)
+        public IEnumerable<Track> FindSongPlays(string artist, string trackName, int max = 5)
         {
             if (trackName == null)
                 trackName = "";
@@ -72,7 +72,7 @@ namespace MorningEarWorm.LastFM
             bool keepSearching = true;
             var counter = 0;
 
-            var allTracks = new List<LastFMTrack>();
+            var allTracks = new List<Track>();
             while (keepSearching)
             {
                 //todo: get the tracks async and cancel other retreivals once it's found
@@ -83,7 +83,7 @@ namespace MorningEarWorm.LastFM
                 //foreach(var track in tracks)
                 //    Console.WriteLine(track);
 
-                var matchingTracks = tracks.Where(x => x.Track.ToLower().Contains(trackName.ToLower()));
+                var matchingTracks = tracks.Where(x => x.Name.ToLower().Contains(trackName.ToLower()));
                 if (matchingTracks.Any())
                 {
                     foreach (var track in matchingTracks.OrderByDescending(x => x.PlayDate))

@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 namespace MorningEarWorm.LastFM
 {
 
-    public class LastFMTrack
+    public class Track
     {
         public string Artist { get; set; }
-        public string Track { get; set; }
+        public string Name { get; set; }
         public DateTime PlayDate { get; set; }
 
         public override string ToString()
         {
-            return $"{Artist} - {Track} - {PlayDate:MM/dd/yyyy hh:mm tt}";
+            return $"{Artist} - {Name} - {PlayDate:MM/dd/yyyy hh:mm tt}";
         }
 
         public override bool Equals(object obj)
         {
-            if (!(obj is LastFMTrack))
+            if (!(obj is Track))
                 return false;
 
-            var other = obj as LastFMTrack;
+            var other = obj as Track;
             return other.Artist == this.Artist
-                && other.Track == this.Track
+                && other.Name == this.Name
                 && other.PlayDate == this.PlayDate;
         }
 
@@ -33,7 +33,7 @@ namespace MorningEarWorm.LastFM
         {
             int hash = 13;
             hash = (hash * 7) + Artist.GetHashCode();
-            hash = (hash * 7) + Track.GetHashCode();
+            hash = (hash * 7) + Name.GetHashCode();
             hash = (hash * 7) + PlayDate.GetHashCode();
             return hash;
         }

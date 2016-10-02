@@ -18,7 +18,6 @@
   </ContentPage.Resources>
   <StackLayout Orientation="Vertical">
     <Label Text="Morning Ear Worm"></Label>
-    <Label Text="{Binding Message}" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource labelRedStyle}" />
 
     <Label Text="Artist:"/>
     <Entry Text="{Binding Artist}"/>
@@ -29,6 +28,7 @@
     <Button Clicked="Search" Text="Search" />
     <Button Clicked="SearchYT" Text="SearchYT" />
 
+    <Label Text="{Binding Message}" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource labelRedStyle}" />
     <Label Text="Select result to tweet:"/>
     <ListView ItemsSource="{Binding Results}" ItemSelected="Tweet"></ListView>
 

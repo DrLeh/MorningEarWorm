@@ -9,7 +9,7 @@ namespace MorningEarWorm.LastFM
 {
     public class UserArtistTracks
     {
-        public IEnumerable<LastFMTrack> GetLastFMTracks()
+        public IEnumerable<Track> GetLastFMTracks()
         {
             return tracks?.tracks?.Select(x => x.ToLastFMTrack());
         }
@@ -40,11 +40,11 @@ namespace MorningEarWorm.LastFM
                     public DateTime Date { get; set; }
                 }
 
-                public LastFMTrack ToLastFMTrack()
+                public Track ToLastFMTrack()
                 {
-                    return new LastFMTrack
+                    return new Track
                     {
-                        Track = name,
+                        Name = name,
                         Artist = Artist.name,
                         PlayDate = Date.Date.ToLocalTime()
                     };

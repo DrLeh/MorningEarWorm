@@ -35,21 +35,19 @@ namespace MorningEarWorm.Mobile
         private string _Message;
         public string Message { get { return _Message; } set { _Message = value; NotifyPropertyChanged(); } }
 
-        private ObservableCollection<LastFMTrack> _Results;
-        public ObservableCollection<LastFMTrack> Results { get { return _Results; } set { _Results = value; NotifyPropertyChanged(); } }
+        private ObservableCollection<Track> _Results;
+        public ObservableCollection<Track> Results { get { return _Results; } set { _Results = value; NotifyPropertyChanged(); } }
 
 
         public void Search()
         {
-            var client = new LastFMClient(config, "thelehmanlip");
-            Results = new ObservableCollection<LastFMTrack>(client.FindSongPlays(Artist, Track, 5));
-            //Message = "Tweeting it!";
-            //Tweet(Results.First());
+            var client = new LastFMRepository(config, "thelehmanlip");
+            Results = new ObservableCollection<Track>(client.FindSongPlays(Artist, Track, 5));
         }
 
-        public void Tweet(LastFMTrack track)
+        public void Tweet(Track track)
         {
-            new Tweeter(config).SendTweet(track.Artist, track.Track, (DateTime.Today - track.PlayDate).Days);
+            new Tweeter(config).SendTweet(track.Artist, track.Name, (DateTime.Today - track.PlayDate).Days);
             Message = "Twote it!";
         }
 

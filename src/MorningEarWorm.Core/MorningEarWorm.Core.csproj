@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="IScrobbleRepository.cs" />
+    <Compile Include="Track.cs" />
     <Compile Include="Tweeter.cs" />
     <Compile Include="DataEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

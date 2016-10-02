@@ -28,19 +28,19 @@ namespace MorningEarWorm
         }
         public static void RunReal()
         {
-            var client = new LastFMClient(new ConfigManagerConfiguration(), "thelehmanlip");
+            var client = new LastFMRepository(new ConfigManagerConfiguration(), "thelehmanlip");
             DoStuff(client);
         }
 
         public static void RunMocked()
         {
-            var client = new Mock<ILastFMClient>();
+            var client = new Mock<IScrobbleRepository>();
             var res = new[]
             {
-                new LastFMTrack
+                new Track
                 {
                     Artist = "Periphery",
-                    Track = "Flatline",
+                    Name = "Flatline",
                     PlayDate = DateTime.Today.AddDays(-10)
                 }
             };
@@ -48,7 +48,7 @@ namespace MorningEarWorm
             DoStuff(client.Object);
         }
 
-        public static void DoStuff(ILastFMClient client)
+        public static void DoStuff(IScrobbleRepository client)
         {
 
             Console.WriteLine("Artist:");
@@ -67,7 +67,7 @@ namespace MorningEarWorm
             else
             {
                 var counter = 1;
-                var list = new List<LastFMTrack>();
+                var list = new List<Track>();
                 foreach (var trackPlay in trackPlays)
                 {
                     Console.WriteLine($"{counter++}: Track found: {trackPlay}");
@@ -82,8 +82,9 @@ namespace MorningEarWorm
                 {
                     var trackPlay = list[which - 1];
                     Console.WriteLine("Tweeting it!");
-                    new Tweeter(new ConfigManagerConfiguration()).SendTweet(trackPlay.Artist, trackPlay.Track, (DateTime.Today - trackPlay.PlayDate).Days);
-                }else
+                    new Tweeter(new ConfigManagerConfiguration()).SendTweet(trackPlay.Artist, trackPlay.Name, (DateTime.Today - trackPlay.PlayDate).Days);
+                }
+                else
                 {
                     Console.WriteLine("Skipping tweet");
                     if (t.Key == ConsoleKey.Q)
